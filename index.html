@@ -1,4 +1,833 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Tusar Biswas | AI Automation Specialist</title>  <meta name="description" content="Tusar Biswas - AI Automation Specialist specializing in n8n, AI Agents, API Integration, RAG and business workflow automation.">  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080d18;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 13, 24, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1e293b;
+    }
+
+    nav {
+      height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #60a5fa;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #94a3b8;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #60a5fa;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 90px 0;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.16), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.08), transparent 30%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .availability {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid #334155;
+      border-radius: 50px;
+      background: #0f172a;
+      color: #93c5fd;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 78px);
+      line-height: 1.05;
+      color: #ffffff;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #60a5fa;
+    }
+
+    .hero h2 {
+      font-size: clamp(21px, 4vw, 30px);
+      color: #cbd5e1;
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: #94a3b8;
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid #475569;
+      color: #e2e8f0;
+    }
+
+    .btn-outline:hover {
+      border-color: #60a5fa;
+      color: #60a5fa;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-heading h2 {
+      color: #ffffff;
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: #64748b;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about h3 {
+      color: #ffffff;
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .about p {
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+
+    .about-box {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .about-box h3 {
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .about-box ul {
+      list-style: none;
+    }
+
+    .about-box li {
+      padding: 11px 0;
+      border-bottom: 1px solid #1e293b;
+      color: #cbd5e1;
+    }
+
+    .about-box li:last-child {
+      border-bottom: none;
+    }
+
+    .check {
+      color: #60a5fa;
+      margin-right: 9px;
+      font-weight: bold;
+    }
+
+    /* SERVICES */
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 30px;
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: #3b82f6;
+    }
+
+    .service-icon {
+      font-size: 30px;
+      margin-bottom: 17px;
+    }
+
+    .service-card h3 {
+      color: #ffffff;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .skill {
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      padding: 10px 17px;
+      border-radius: 30px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      border-color: #60a5fa;
+      color: #60a5fa;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+      gap: 22px;
+    }
+
+    .project {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 15px;
+      padding: 30px;
+    }
+
+    .project h3 {
+      color: #ffffff;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      color: #94a3b8;
+      margin-bottom: 17px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 5px 10px;
+      border-radius: 5px;
+      background: #172554;
+      color: #93c5fd;
+      font-size: 12px;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      padding-bottom: 110px;
+    }
+
+    .contact-card {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 18px;
+      padding: 55px 30px;
+    }
+
+    .contact-card h2 {
+      color: #ffffff;
+      font-size: 36px;
+      margin-bottom: 13px;
+    }
+
+    .contact-card p {
+      color: #94a3b8;
+      max-width: 600px;
+      margin: 0 auto 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-bottom: 28px;
+    }
+
+    .contact-links a {
+      color: #60a5fa;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #1e293b;
+      padding: 30px 0;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 90px 0;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-heading h2 {
+        font-size: 31px;
+      }
+    }
+  </style></head><body>  <!-- NAVIGATION -->  <header>
+    <div class="container">
+      <nav>    <a href="#home" class="logo">
+      Tusar<span>.</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+</div>
+
+  </header>  <!-- HERO -->  <section id="home" class="hero"><div class="container">
+
+  <div class="hero-content">
+
+    <div class="availability">
+      AI Automation Specialist • Freelancer
+    </div>
+
+    <h1>
+      Hi, I'm <span>Tusar Biswas</span>
+    </h1>
+
+    <h2>
+      I Build AI-Powered Automation Workflows
+    </h2>
+
+    <p>
+      I help businesses automate repetitive processes using
+      n8n, AI Agents, APIs, RAG, and AI-powered workflows —
+      turning manual tasks into efficient automated systems.
+    </p>
+
+    <div class="buttons">
+
+      <a href="#projects" class="btn btn-primary">
+        View Projects
+      </a>
+
+      <a href="#contact" class="btn btn-outline">
+        Get In Touch
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+  </section>  <!-- ABOUT -->  <section id="about" class="about"><div class="container">
+
+  <div class="section-heading">
+    <h2>About Me</h2>
+    <p>Building practical automation solutions with AI</p>
+  </div>
+
+  <div class="about-grid">
+
+    <div>
+
+      <h3>Automate the work. Focus on what matters.</h3>
+
+      <p>
+        I'm an AI Automation Specialist focused on designing
+        practical, reliable, and scalable automation systems.
+      </p>
+
+      <p>
+        I work with n8n, AI Agents, APIs, RAG, data processing,
+        email automation, and AI-powered content workflows.
+      </p>
+
+      <p>
+        My goal is to connect the right tools and technologies
+        to create useful workflows that reduce repetitive
+        manual work.
+      </p>
+
+    </div>
+
+    <div class="about-box">
+
+      <h3>My Focus</h3>
+
+      <ul>
+
+        <li>
+          <span class="check">✓</span>
+          AI Workflow Automation
+        </li>
+
+        <li>
+          <span class="check">✓</span>
+          AI Agents
+        </li>
+
+        <li>
+          <span class="check">✓</span>
+          API Integration
+        </li>
+
+        <li>
+          <span class="check">✓</span>
+          RAG-Based Solutions
+        </li>
+
+        <li>
+          <span class="check">✓</span>
+          Business Process Automation
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+
+  </section>  <!-- SERVICES -->  <section id="services"><div class="container">
+
+  <div class="section-heading">
+    <h2>Services</h2>
+    <p>Automation solutions I can build</p>
+  </div>
+
+  <div class="service-grid">
+
+    <div class="service-card">
+
+      <div class="service-icon">⚙️</div>
+
+      <h3>n8n Automation</h3>
+
+      <p>
+        Build automated workflows that connect applications,
+        APIs, databases, AI models, and business tools.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <div class="service-icon">🤖</div>
+
+      <h3>AI Agents</h3>
+
+      <p>
+        Create AI-powered workflows that process information,
+        use tools, and automate repetitive business tasks.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <div class="service-icon">🔗</div>
+
+      <h3>API Integration</h3>
+
+      <p>
+        Connect third-party APIs and services to build
+        automated data and business workflows.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <div class="service-icon">📚</div>
+
+      <h3>RAG Systems</h3>
+
+      <p>
+        Build knowledge-based AI workflows that retrieve
+        relevant information from documents and data.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <div class="service-icon">📧</div>
+
+      <h3>Email Automation</h3>
+
+      <p>
+        Automate email processing, classification, support
+        workflows, notifications, and AI-assisted replies.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <div class="service-icon">🎬</div>
+
+      <h3>AI Content Automation</h3>
+
+      <p>
+        Automate content workflows involving AI scripts,
+        images, voice, and media processing.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+  </section>  <!-- SKILLS -->  <section id="skills"><div class="container">
+
+  <div class="section-heading">
+    <h2>Skills & Tools</h2>
+    <p>Technologies I use for automation</p>
+  </div>
+
+  <div class="skills">
+
+    <span class="skill">n8n</span>
+    <span class="skill">AI Agents</span>
+    <span class="skill">Workflow Automation</span>
+    <span class="skill">API Integration</span>
+    <span class="skill">Artificial Intelligence</span>
+    <span class="skill">RAG</span>
+    <span class="skill">REST APIs</span>
+    <span class="skill">Webhooks</span>
+    <span class="skill">Google Sheets</span>
+    <span class="skill">Gmail</span>
+    <span class="skill">Gemini</span>
+    <span class="skill">JSON</span>
+    <span class="skill">JavaScript</span>
+    <span class="skill">Data Processing</span>
+    <span class="skill">AI Automation</span>
+
+  </div>
+
+</div>
+
+  </section>  <!-- PROJECTS -->  <section id="projects"><div class="container">
+
+  <div class="section-heading">
+    <h2>Projects</h2>
+    <p>Selected automation projects</p>
+  </div>
+
+  <div class="projects">
+
+
+    <div class="project">
+
+      <h3>AI YouTube Shorts Automation</h3>
+
+      <p>
+        An n8n workflow for generating short-form video content
+        using AI-generated scripts, images, voice, and video
+        processing.
+      </p>
+
+      <div class="tags">
+        <span class="tag">n8n</span>
+        <span class="tag">Gemini</span>
+        <span class="tag">AI</span>
+        <span class="tag">Image Generation</span>
+        <span class="tag">Voice</span>
+        <span class="tag">Video</span>
+      </div>
+
+    </div>
+
+
+    <div class="project">
+
+      <h3>RAG Customer Support Automation</h3>
+
+      <p>
+        A knowledge-based AI support workflow designed to
+        retrieve relevant information from business knowledge
+        and assist with customer responses.
+      </p>
+
+      <div class="tags">
+        <span class="tag">n8n</span>
+        <span class="tag">RAG</span>
+        <span class="tag">AI Agent</span>
+        <span class="tag">Vector Store</span>
+      </div>
+
+    </div>
+
+
+    <div class="project">
+
+      <h3>AI Email Support Workflow</h3>
+
+      <p>
+        An AI-assisted email automation workflow for processing
+        customer requests and generating structured responses.
+      </p>
+
+      <div class="tags">
+        <span class="tag">n8n</span>
+        <span class="tag">Gmail</span>
+        <span class="tag">AI</span>
+        <span class="tag">API</span>
+        <span class="tag">Automation</span>
+      </div>
+
+    </div>
+
+
+    <div class="project">
+
+      <h3>Contract Risk Analysis</h3>
+
+      <p>
+        An automation workflow for analyzing contract clauses,
+        identifying potential risk areas, and organizing
+        structured results for review.
+      </p>
+
+      <div class="tags">
+        <span class="tag">n8n</span>
+        <span class="tag">AI</span>
+        <span class="tag">Documents</span>
+        <span class="tag">Google Sheets</span>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+  </section>  <!-- CONTACT -->  <section id="contact" class="contact-section"><div class="container">
+
+  <div class="contact-card">
+
+    <h2>Let's Build Something Useful</h2>
+
+    <p>
+      Have a repetitive process you'd like to automate?
+      Let's connect and explore how AI and automation can
+      simplify the workflow.
+    </p>
+
+    <div class="contact-links">
+
+      <a href="mailto:tusar488@gmail.com">
+        ✉ tusar488@gmail.com
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/tusar-biswas-547504414/"
+        target="_blank"
+        rel="noopener">
+        LinkedIn
+      </a>
+
+      <a
+        href="https://github.com/tusar488b"
+        target="_blank"
+        rel="noopener">
+        GitHub
+      </a>
+
+    </div>
+
+    <a
+      href="mailto:tusar488@gmail.com"
+      class="btn btn-primary">
+      Contact Me
+    </a>
+
+  </div>
+
+</div>
+
+  </section>  <!-- FOOTER -->  <footer><div class="container">
+
+  <p>
+    © 2026 Tusar Biswas. AI Automation Specialist.
+  </p>
+
+</div>
+
+  </footer>  <script>
+    // Current year
+    document.querySelector("footer p").innerHTML =
+      "© " + new Date().getFullYear() +
+      " Tusar Biswas. AI Automation Specialist.";
+  </script></body>
+</html>
             
         
   
